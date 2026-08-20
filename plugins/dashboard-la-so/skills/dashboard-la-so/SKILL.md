@@ -24,7 +24,7 @@ Thiếu report .md → dừng, bảo anh luận xong (skill `luan-tu-vi`) trư�
 ```
 cp "assets/template.html" "huyen-hoc/output/report-la-so/<Tên khách>/<Tên khách> — Dashboard lá số — <YYYY-MM-DD>.html"
 ```
-Template đã chứa sẵn nội dung ví dụ của Kim Yến để thấy đúng khuôn. Việc của Mèo là **sửa các vùng nội dung** sang lá số mới.
+Template đã chứa sẵn nội dung ví dụ của "Khách Mẫu" (nhân vật hư cấu) để thấy đúng khuôn. Việc của Mèo là **sửa các vùng nội dung** sang lá số mới.
 
 **Bước 2 — Sửa nội dung theo lá số mới** (dùng Edit trên file vừa copy, theo mục "Bản đồ các vùng cần sửa" bên dưới). Đọc lại `assets/template.html` (hoặc file vừa copy) để thấy cấu trúc thật trước khi sửa. KHÔNG đụng vào `<style>`, section `class="brandsec"` (thương hiệu — cố định), và `<script>`.
 
@@ -82,7 +82,7 @@ File dashboard lưu cùng chỗ report của khách: `huyen-hoc/output/report-la
 Bản master ở `huyen-hoc/skill-goc/dashboard-la-so/`; bản chạy ở `~/.claude/skills/dashboard-la-so/`. Sửa master rồi copy sang bản chạy (giống các skill huyền học khác).
 
 ## Tài liệu kèm (assets/)
-- `template.html` — khung thiết kế + ví dụ Kim Yến (copy ra rồi sửa).
+- `template.html` — khung thiết kế + ví dụ Khách Mẫu (copy ra rồi sửa).
 - `nine-emblem.png` — logo Nine đã tách nền (finalize nhúng base64).
-- `example-report.md` — ví dụ report Full (Kim Yến) để đối chiếu định dạng .md đầu vào.
+- `example-report.md` — ví dụ report Full (Khách Mẫu, hư cấu) để đối chiếu định dạng .md đầu vào.
 - `finalize.py` — nhúng logo + sinh toàn văn luận từ .md.

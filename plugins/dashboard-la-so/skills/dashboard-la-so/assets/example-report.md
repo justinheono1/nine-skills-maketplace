@@ -1,6 +1,6 @@
-# Lá số Kim Yến — một đời trăng trong sương
+# Lá số Khách Mẫu — một đời trăng trong sương
 
-*Canh Ngọ 1990, Dương Nữ, Thổ Ngũ Cục (Lộ Bàng Thổ), giờ Đinh Hợi. Mệnh Thái Âm tại Mão, Thân cư Phu Thê. Đại vận hiện tại 35–44 tuổi tại cung Tý. Lá số #138557.*
+*Dương Nữ, Thổ Ngũ Cục (Lộ Bàng Thổ). Mệnh Thái Âm tại Mão, Thân cư Phu Thê. Đại vận hiện tại 35–44 tuổi tại cung Tý. (Lá số mẫu minh hoạ — nhân vật hư cấu, không phải khách hàng thật.)*
 
 Một lá số vẽ ra địa hình của một đời người, chỗ nào là núi, chỗ nào là vực, chỗ nào là mảnh đất tốt để gieo hạt. Nó không đi thay ai và cũng không định đoạt thay ai. Nó chỉ giúp người ta nhìn rõ mình hơn, để đi thì bớt vấp, chọn thì bớt sai. Bản luận dưới đây nên được đọc như một tấm bản đồ mở ra trước mặt, không phải một lời phán đã đóng đinh.
 
@@ -134,4 +134,4 @@ Sau cùng, xin nhắc lại điều đã nói ở đầu. Tất cả những gì
 
 ---
 
-*Dữ liệu an sao lấy từ lá số #138557, đối chiếu và tự kiểm bằng luật, gồm Triệt tại Ngọ Mùi, Tuần tại Tuất Hợi, đại vận Mậu Tý 35 đến 44, và bảng nguyệt vận đã khóa. Ý nghĩa sao và phú nôm tra từ giáo trình tham khảo. Bản lập ngày 17 tháng 8 năm 2026.*
+*Dữ liệu an sao của lá số mẫu, đối chiếu và tự kiểm bằng luật, gồm Triệt tại Ngọ Mùi, Tuần tại Tuất Hợi, đại vận Mậu Tý 35 đến 44, và bảng nguyệt vận đã khóa. Ý nghĩa sao và phú nôm tra từ giáo trình tham khảo. (Bản mẫu minh hoạ — nhân vật hư cấu.)*
