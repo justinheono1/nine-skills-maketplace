@@ -1,0 +1,7 @@
+{
+  "name": "dashboard-la-so",
+  "description": "Dựng dashboard trực quan một trang (HTML tự chứa) cho một lá số Tử Vi theo nhận diện Nine Feng Shui, để gửi khách. Trực quan hoá bản Life Dossier (.md) đã luận thành 1 file .html: bàn cờ 12 cung, các khối tóm tắt, toàn văn luận bấm-mở, section thương hiệu Nine, nút Sáng/Tối, in được.",
+  "author": {
+    "name": "Nine Feng Shui"
+  }
+}

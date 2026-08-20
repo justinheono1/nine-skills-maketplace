@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lá số Kim Yến</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ground:#f4f0e6; --panel:#fbf9f2; --panel2:#ece7d9; --raise:#ffffff;
+  --ink:#25302a; --muted:#5c6a60; --faint:#8a978c;
+  --gold:#9c7c2e; --gold-soft:#c2a15e; --brand:#2e5a40; --quyen:#8f6f34; --head:#2e5a40;
+  --jade:#3e8e6a; --verm:#b0503f; --amber:#bd7d24;
+  --kim:#8a919b; --moc:#3e8e6a; --thuy:#3f5f9e; --hoa:#b0503f; --tho:#9c7c2e;
+  --line:rgba(37,48,42,.14); --line-strong:rgba(37,48,42,.26);
+  --shadow:0 1px 2px rgba(37,48,42,.06),0 10px 32px rgba(37,48,42,.09);
+  --chip:rgba(46,90,64,.10);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#14201a; --panel:#1c2a22; --panel2:#22332a; --raise:#2a3b30;
+    --ink:#eaefe6; --muted:#9ca99e; --faint:#7f8d82;
+    --gold:#cbab63; --gold-soft:#e0cb93; --brand:#6dae86; --quyen:#cba64c; --head:#e3975a;
+    --jade:#6dbf96; --verm:#e0776a; --amber:#e0a94a;
+    --kim:#a6adb8; --moc:#6dbf96; --thuy:#7e9fd6; --hoa:#e0776a; --tho:#cbab63;
+    --line:rgba(234,239,230,.12); --line-strong:rgba(234,239,230,.22);
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 40px rgba(0,0,0,.5);
+    --chip:rgba(109,174,134,.15);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#14201a; --panel:#1c2a22; --panel2:#22332a; --raise:#2a3b30;
+  --ink:#eaefe6; --muted:#9ca99e; --faint:#7f8d82;
+  --gold:#cbab63; --gold-soft:#e0cb93; --brand:#6dae86; --quyen:#cba64c; --head:#e3975a;
+  --jade:#6dbf96; --verm:#e0776a; --amber:#e0a94a;
+  --kim:#a6adb8; --moc:#6dbf96; --thuy:#7e9fd6; --hoa:#e0776a; --tho:#cbab63;
+  --line:rgba(234,239,230,.12); --line-strong:rgba(234,239,230,.22);
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 40px rgba(0,0,0,.5);
+  --chip:rgba(109,174,134,.15);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-weight:400;line-height:1.68;font-size:16px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:clamp(18px,4vw,44px)}
+h1,h2,h3,.disp{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif}
+a{color:var(--gold)}
+::selection{background:var(--chip)}
+
+.brand{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px}
+.mark{display:flex;align-items:center;gap:12px}
+.seal{width:46px;height:46px;flex:none;display:block}
+.mark b{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:22px;color:var(--ink);line-height:1;letter-spacing:.01em;white-space:nowrap}
+.mark b .fg{color:var(--brand);display:inline;font-size:inherit;letter-spacing:normal;text-transform:none;margin:0}
+.mark span{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);margin-top:3px}
+.toggle{appearance:none;border:1px solid var(--line-strong);background:var(--panel);color:var(--muted);
+  border-radius:999px;padding:8px 14px;font:inherit;font-size:12.5px;cursor:pointer;letter-spacing:.04em}
+.toggle:hover{color:var(--ink);border-color:var(--gold)}
+.toggle:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+.hero{border-top:1px solid var(--line);padding-top:28px}
+.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin:0 0 8px}
+.hero h1{margin:.06em 0 .34em;font-weight:700;font-size:clamp(34px,6vw,60px);line-height:1.04;text-wrap:balance}
+.hero .sub{color:var(--muted);font-size:clamp(15px,2vw,17px);max-width:62ch;margin:0}
+.factstrip{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:24px}
+.fact{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 13px;line-height:1.3}
+.fact i{display:block;font-style:normal;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:2px}
+.fact b{font-weight:600;font-size:14px}
+
+section{margin-top:clamp(42px,6vw,66px)}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:20px}
+.sec-head .n{font-family:"Cormorant Garamond",serif;font-size:15px;color:var(--gold);font-style:italic;flex:none}
+.sec-head h2{margin:0;font-size:clamp(23px,3.4vw,30px);font-weight:700;letter-spacing:-.01em}
+.sec-head .k{margin-left:auto;font-size:12px;color:var(--faint);letter-spacing:.04em;text-align:right}
+.lead{color:var(--muted);max-width:74ch;margin:-6px 0 22px;font-size:15.5px}
+
+.board{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,minmax(134px,auto));gap:10px}
+.cell{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:11px 11px 30px;overflow:hidden;transition:border-color .18s,transform .18s,box-shadow .18s}
+.cell:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:var(--shadow)}
+.cell .age{position:absolute;top:8px;right:10px;font-size:10px;color:var(--faint);letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.cell .cung{font-size:14.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--head);font-weight:700}
+.cell .major{font-family:"Cormorant Garamond",serif;font-size:25px;font-weight:700;line-height:1.06;margin:3px 0 4px}
+.cell .major .st{font-size:10px;font-weight:700;padding:1px 5px;border-radius:5px;vertical-align:middle;margin-left:3px;
+  letter-spacing:.02em;font-family:"Be Vietnam Pro",sans-serif}
+.st.mieu,.st.vuong,.st.dac{background:rgba(62,142,106,.16);color:var(--jade)}
+.st.ham{background:rgba(176,80,63,.15);color:var(--verm)}
+.cell .stars{font-size:11.5px;color:var(--muted);line-height:1.5;margin-top:2px}
+.cell .hoa{font-weight:600}
+.hoa.loc{color:var(--jade)} .hoa.quyen{color:var(--quyen)} .hoa.khoa{color:var(--gold)} .hoa.ky{color:var(--verm)}
+.chi{position:absolute;left:11px;bottom:8px;font-size:10px;color:var(--faint);letter-spacing:.12em;text-transform:uppercase}
+.pips{position:absolute;right:9px;bottom:7px;display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;max-width:72%}
+.pip{font-size:9px;letter-spacing:.05em;padding:1px 5px;border-radius:4px;font-weight:600;white-space:nowrap;background:var(--chip);color:var(--brand)}
+.pip.menh{background:var(--brand);color:#fff}
+.pip.than{background:var(--gold);color:#241d08}
+.pip.trietv{background:rgba(176,80,63,.16);color:var(--verm);border:1px solid rgba(176,80,63,.42)}
+.pip.tuanv{background:rgba(63,95,158,.14);color:var(--thuy);border:1px solid rgba(63,95,158,.42)}
+.pip.dv{background:var(--jade);color:#06241a}
+.pip.month{background:transparent;border:1px solid var(--line-strong);color:var(--faint)}
+.cell.mark-menh{border-color:var(--brand);box-shadow:inset 0 0 0 1px var(--brand)}
+.cell.mark-than{border-color:var(--gold)}
+.cell.mark-dv{box-shadow:inset 0 0 0 1.5px var(--jade)}
+.corners{grid-column:2/4;grid-row:2/4;background:linear-gradient(160deg,var(--panel2),var(--panel));
+  border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;justify-content:center;gap:13px}
+.corners .who{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:clamp(26px,4vw,38px);line-height:1;color:var(--head)}
+.corners .who small{display:block;font-family:"Be Vietnam Pro",sans-serif;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-top:6px}
+.corners .row{display:flex;flex-wrap:wrap;gap:7px 9px}
+.corners .cc{background:var(--raise);border:1px solid var(--line);border-radius:9px;padding:7px 11px;font-size:12.5px}
+.corners .cc i{font-style:normal;color:var(--faint);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:1px}
+.corners .cc b{font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:11px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 19px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 4px;font-size:20px;font-weight:700;line-height:1.15}
+.card .tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 9px;font-family:"Be Vietnam Pro",sans-serif}
+.card p{margin:0 0 10px;font-size:14.5px;color:var(--ink)}
+.card p:last-child{margin-bottom:0}
+.card .q{color:var(--muted);font-style:italic;font-family:"Cormorant Garamond",serif;font-size:16px;line-height:1.4}
+
+.sr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sr ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.sr li{position:relative;padding-left:18px;font-size:14px;line-height:1.5}
+.sr li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%}
+.good li::before{background:var(--jade)}
+.risk li::before{background:var(--verm)}
+.good h3::after,.risk h3::after{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-left:8px;vertical-align:middle}
+.good h3::after{background:var(--jade)} .risk h3::after{background:var(--verm)}
+
+.months{display:grid;grid-template-columns:repeat(6,1fr);gap:9px}
+.mo{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 11px 12px;position:relative}
+.mo .h{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:5px;gap:6px}
+.mo .m{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:18px}
+.mo .c{font-size:10px;color:var(--faint);letter-spacing:.05em;text-transform:uppercase;text-align:right}
+.mo p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.5}
+.mo.hot{border-color:rgba(176,80,63,.45)} .mo.hot .m{color:var(--verm)}
+.mo.soft{border-color:rgba(62,142,106,.42)} .mo.soft .m{color:var(--jade)}
+.mo .flag{position:absolute;top:9px;right:10px;font-size:8.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--verm);font-weight:700}
+.mo.soft .flag{color:var(--jade)}
+
+.acts{counter-reset:a;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:13px}
+.act{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:11px;padding:15px 16px}
+.act::before{counter-increment:a;content:counter(a);font-family:"Cormorant Garamond",serif;font-size:26px;color:var(--gold);font-weight:700;display:block;margin-bottom:2px;line-height:1}
+.act b{display:block;font-weight:600;margin-bottom:3px}
+.act span{font-size:13.5px;color:var(--muted)}
+
+.read details{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;background:var(--panel);overflow:hidden}
+.read summary{cursor:pointer;list-style:none;padding:15px 18px;display:flex;align-items:center;gap:12px;
+  font-family:"Cormorant Garamond",serif;font-weight:700;font-size:21px}
+.read summary::-webkit-details-marker{display:none}
+.read summary .ix{font-size:14px;font-style:italic;color:var(--gold);flex:none;font-family:"Cormorant Garamond",serif}
+.read summary .plus{margin-left:auto;flex:none;color:var(--gold);font-size:22px;transition:transform .2s;line-height:1}
+.read details[open] summary .plus{transform:rotate(45deg)}
+.read summary:hover{color:var(--gold)}
+.read summary:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.read .body{padding:2px 18px 18px;border-top:1px solid var(--line)}
+.read .body h4{font-family:"Cormorant Garamond",serif;font-size:23px;font-weight:700;line-height:1.2;margin:22px 0 7px;color:var(--head)}
+.read .body p{margin:0 0 13px;font-size:15px;max-width:none;text-align:justify;text-justify:inter-word}
+.read .body p:last-child{margin-bottom:0}
+.star{font-weight:600;color:var(--ink);white-space:nowrap}
+.phu{font-style:italic}
+
+footer{margin-top:60px;border-top:1px solid var(--line);padding-top:22px;color:var(--muted);font-size:13px}
+footer .fl{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+footer .fl .seal{width:30px;height:30px}
+footer .fl b{font-family:"Cormorant Garamond",serif;font-size:17px;color:var(--ink)}
+footer .disc{max-width:72ch;font-style:italic;font-family:"Cormorant Garamond",serif;color:var(--faint);font-size:15px}
+footer .meta{margin-top:12px;font-size:11.5px;letter-spacing:.03em;color:var(--faint)}
+
+@media (max-width:760px){
+  .board{grid-template-columns:repeat(2,1fr);grid-auto-rows:minmax(120px,auto);grid-template-rows:none}
+  .corners{grid-column:1/3;grid-row:auto;order:-1}
+  .sr{grid-template-columns:1fr}
+  .months{grid-template-columns:repeat(2,1fr)}
+}
+@media print{
+  .toggle{display:none}
+  body{background:#fff;color:#000;font-size:12px}
+  .read details{break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.brandsec .slogan{font-family:"Cormorant Garamond",serif;font-size:clamp(22px,3.6vw,32px);font-style:italic;color:var(--head);text-align:center;max-width:30ch;margin:2px auto 26px;line-height:1.28;text-wrap:balance}
+.vm{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:11px}
+.val{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px 15px}
+.val b{font-family:"Cormorant Garamond",serif;color:var(--gold);font-size:22px;font-weight:700;line-height:.9;flex:none}
+.val span{font-size:13.5px;color:var(--ink);line-height:1.45}
+@media(max-width:760px){.vm{grid-template-columns:1fr}}
+.seal img{width:100%;height:100%;object-fit:contain;display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand">
+    <div class="mark">
+      <span class="seal"><img src="{{LOGO}}" alt="Nine Feng Shui"/></span>
+      <div><b>Nine <span class="fg">Feng</span> Shui</b><span>Hiểu thời · Chọn đúng nhịp · Hành động phù hợp</span></div>
+    </div>
+    <button class="toggle" id="tg" aria-label="Đổi giao diện sáng tối">◑ Sáng / Tối</button>
+  </div>
+
+  <header class="hero">
+    <p class="eyebrow">The Life Dossier</p>
+    <h1>Lá số Kim Yến — một đời trăng trong sương</h1>
+    <p class="sub">Một lá số là tấm bản đồ địa hình của một đời người: chỗ nào là núi, chỗ nào là vực, chỗ nào là mảnh đất tốt để gieo hạt. Nó không đi thay ai, chỉ giúp người ta đi bớt vấp.</p>
+    <div class="factstrip">
+      <div class="fact"><i>Sinh</i><b>Canh Ngọ 1990 · giờ Đinh Hợi</b></div>
+      <div class="fact"><i>Giới</i><b>Dương Nữ</b></div>
+      <div class="fact"><i>Bản mệnh</i><b>Lộ Bàng Thổ · Thổ Ngũ Cục</b></div>
+      <div class="fact"><i>Mệnh</i><b>Thái Âm (hãm) · Mão</b></div>
+      <div class="fact"><i>Thân</i><b>Cư Phu Thê · Thiên Cơ (đắc)</b></div>
+      <div class="fact"><i>Đại vận</i><b>35–44 · Mậu Tý · Phá Quân</b></div>
+      <div class="fact"><i>Năm xem</i><b>Bính Ngọ 2026 · 37 tuổi</b></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head"><span class="n">i.</span><h2>Bàn cờ mười hai cung</h2><span class="k">Lá số #138557</span></div>
+    <p class="lead">Toàn cảnh lá số. Màu chính tinh cho biết cát (xanh) hay hung (đỏ); nhãn góc là tuổi khởi đại vận và tháng nguyệt vận 2026; chấm dưới ghi các dấu Mệnh · Thân · Triệt · Tuần · Đại vận · Lưu Thái Tuế · Tiểu Hạn.</p>
+    <div class="board">
+      <!-- Row 1: Tỵ Ngọ Mùi Thân -->
+      <div class="cell"><span class="age">105 · T3</span><div class="cung">Phúc Đức</div>
+        <div class="major">Cự Môn<span class="st ham">Hãm</span></div>
+        <div class="stars">Thai Phụ · Phá Toái · Trực Phù<br/><span class="hoa">ĐV Lộc Tồn</span></div>
+        <span class="chi">Tỵ · Hỏa</span><span class="pips"><span class="pip month">T3</span></span></div>
+
+      <div class="cell"><span class="age">95 · T4</span><div class="cung">Điền Trạch</div>
+        <div class="major">Liêm Trinh<span class="st vuong">V</span> Thiên Tướng<span class="st vuong">V</span></div>
+        <div class="stars">Thiên Khôi · Thái Tuế<br/><span class="hoa ky">Lưu Hóa Kỵ (Liêm)</span></div>
+        <span class="chi">Ngọ · Hỏa</span><span class="pips"><span class="pip trietv">Triệt</span><span class="pip">Lưu T.Tuế</span></span></div>
+
+      <div class="cell"><span class="age">85 · T5</span><div class="cung">Quan Lộc</div>
+        <div class="major">Thiên Lương<span class="st dac">Đắc</span></div>
+        <div class="stars">Thiên Không · Đà La · Thiếu Dương</div>
+        <span class="chi">Mùi · Thổ</span><span class="pips"><span class="pip trietv">Triệt</span><span class="pip">LN Mệnh</span></span></div>
+
+      <div class="cell"><span class="age">75 · T6</span><div class="cung">Nô Bộc</div>
+        <div class="major">Thất Sát<span class="st mieu">Miếu</span></div>
+        <div class="stars">Lộc Tồn · Thiên Mã · Cô Thần · Tang Môn</div>
+        <span class="chi">Thân · Kim</span><span class="pips"><span class="pip month">T6</span></span></div>
+
+      <!-- Row 2 left: Thìn -->
+      <div class="cell"><span class="age">115 · T2</span><div class="cung">Phụ Mẫu</div>
+        <div class="major">Tham Lang<span class="st vuong">Vượng</span></div>
+        <div class="stars">Tả Phù · Quả Tú · Phượng Các<br/><span class="hoa loc">ĐV Hóa Lộc</span> · ĐV Đà La</div>
+        <span class="chi">Thìn · Thổ</span><span class="pips"><span class="pip">Tiểu Hạn 26</span></span></div>
+
+      <!-- Center -->
+      <div class="corners">
+        <div class="who">Kim Yến<small>The Life Dossier · 2026</small></div>
+        <div class="row">
+          <div class="cc"><i>Chủ mệnh</i><b>Phá Quân</b></div>
+          <div class="cc"><i>Chủ thân</i><b>Hỏa Tinh</b></div>
+          <div class="cc"><i>Cân lượng</i><b>2 lượng 9 chỉ</b></div>
+          <div class="cc"><i>Cách cục</i><b>Cơ Nguyệt Đồng Lương</b></div>
+        </div>
+        <div class="legend">
+          <span><i class="dot" style="background:var(--kim)"></i>Kim</span>
+          <span><i class="dot" style="background:var(--moc)"></i>Mộc</span>
+          <span><i class="dot" style="background:var(--thuy)"></i>Thủy</span>
+          <span><i class="dot" style="background:var(--hoa)"></i>Hỏa</span>
+          <span><i class="dot" style="background:var(--tho)"></i>Thổ</span>
+        </div>
+        <div class="legend">
+          <span><i class="dot" style="background:var(--brand)"></i>Mệnh</span>
+          <span><i class="dot" style="background:var(--gold)"></i>Thân</span>
+          <span><i class="dot" style="background:var(--jade)"></i>Đại vận</span>
+          <span><i class="dot" style="background:var(--verm)"></i>Triệt/Hung</span>
+        </div>
+      </div>
+
+      <!-- Row 2 right: Dậu -->
+      <div class="cell"><span class="age">65 · T7</span><div class="cung">Thiên Di</div>
+        <div class="major">Thiên Đồng<span class="st ham">Hãm</span></div>
+        <div class="stars">Kình Dương · Thiên Hình · Hồng Loan<br/><span class="hoa ky">Hóa Kỵ</span> · <span class="hoa loc">Lưu Lộc</span></div>
+        <span class="chi">Dậu · Kim</span><span class="pips"><span class="pip month">T7</span></span></div>
+
+      <!-- Row 3 left: Mão (Mệnh) -->
+      <div class="cell mark-menh"><span class="age">5 · T1</span><div class="cung">Mệnh</div>
+        <div class="major">Thái Âm<span class="st ham">Hãm</span></div>
+        <div class="stars">Văn Khúc · Đào Hoa · Thiên Hỉ<br/><span class="hoa khoa">Hóa Khoa</span> · <span class="hoa quyen">ĐV Quyền</span></div>
+        <span class="chi">Mão · Mộc</span><span class="pips"><span class="pip menh">Mệnh</span></span></div>
+
+      <!-- Row 3 right: Tuất (Tật Ách) -->
+      <div class="cell"><span class="age">55 · T8</span><div class="cung">Tật Ách</div>
+        <div class="major">Vũ Khúc<span class="st mieu">Miếu</span></div>
+        <div class="stars">Hữu Bật · Địa Kiếp<br/><span class="hoa quyen">Hóa Quyền</span> · <span class="hoa khoa">ĐV Khoa</span></div>
+        <span class="chi">Tuất · Thổ</span><span class="pips"><span class="pip tuanv">Tuần</span></span></div>
+
+      <!-- Row 4: Dần Sửu Tý Hợi -->
+      <div class="cell"><span class="age">15 · T12</span><div class="cung">Huynh Đệ</div>
+        <div class="major">Tử Vi<span class="st mieu">M</span> Thiên Phủ<span class="st mieu">M</span></div>
+        <div class="stars">Hỏa Tinh · Linh Tinh · Thiên Việt · Bát Tọa</div>
+        <span class="chi">Dần · Mộc</span><span class="pips"><span class="pip month">T12</span></span></div>
+
+      <div class="cell mark-than"><span class="age">25 · T11</span><div class="cung">Phu Thê</div>
+        <div class="major">Thiên Cơ<span class="st dac">Đắc</span></div>
+        <div class="stars">Thiên Diêu · Thiên Y · Phong Cáo<br/><span class="hoa ky">ĐV Kỵ</span> · <span class="hoa quyen">Lưu Quyền</span></div>
+        <span class="chi">Sửu · Thổ</span><span class="pips"><span class="pip than">Thân</span></span></div>
+
+      <div class="cell mark-dv"><span class="age">35 · T10</span><div class="cung">Tử Tức</div>
+        <div class="major">Phá Quân<span class="st mieu">Miếu</span></div>
+        <div class="stars">Địa Không · Thiên Khốc · Thiên Hư · Tuế Phá</div>
+        <span class="chi">Tý · Thủy</span><span class="pips"><span class="pip dv">Đại vận 35–44</span></span></div>
+
+      <div class="cell"><span class="age">45 · T9</span><div class="cung">Tài Bạch</div>
+        <div class="major">Thái Dương<span class="st ham">Hãm</span></div>
+        <div class="stars">Văn Xương · Thiên Quan<br/><span class="hoa loc">Hóa Lộc</span> · <span class="hoa khoa">Lưu Khoa</span></div>
+        <span class="chi">Hợi · Thủy</span><span class="pips"><span class="pip tuanv">Tuần</span><span class="pip">LN Quan</span></span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="n">ii.</span><h2>Chân dung bản thể</h2></div>
+    <div class="grid2">
+      <div class="card">
+        <p class="tag">Con người bên trong</p>
+        <h3>Vầng trăng bị sương phủ</h3>
+        <p>Mệnh <span class="star">Thái Âm</span> hãm tại Mão: giàu nội tâm, nhạy cảm, tinh tế, nhưng hay giữ chuyện trong lòng và đêm dễ nghĩ ngợi. Cái khổ là khổ tâm, không phải khổ tiền.</p>
+        <p class="q">"Ngọc Thỏ tuy lạc hãm nhi bất bần" — dù chật vật vẫn không chạm đáy.</p>
+      </div>
+      <div class="card">
+        <p class="tag">Vốn quý nhất</p>
+        <h3>Chữ Hóa Khoa</h3>
+        <p>Thái Âm được <span class="star">Hóa Khoa</span> giữ cho phẩm giá, học thức và sự đáng tin luôn còn nguyên. Đây là đòn bẩy lật một cái mệnh vốn không dễ, và là thương hiệu cả đời.</p>
+        <p class="q">"Nữ mệnh đắc Khoa là tối quý, dầu gặp ác sát cũng vẫn dự phần phẩm cách."</p>
+      </div>
+      <div class="card">
+        <p class="tag">Kim chỉ nam</p>
+        <h3>Dựa vào người, không đơn độc</h3>
+        <p>Kho lộc <span class="star">Lộc Tồn</span> không ở Mệnh mà ở cung bạn bè, đối tác. Tài lộc và quý nhân đến từ môi trường và con người quanh mình. Càng co mình càng cạn cơ hội.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="n">iii.</span><h2>Sự nghiệp · Tài chính · Hôn nhân</h2></div>
+    <div class="grid2">
+      <div class="card"><p class="tag">Sự nghiệp — Quan Lộc</p><h3>Nở muộn mà bền</h3>
+        <p><span class="star">Thiên Lương</span> đắc bị <span class="star">Triệt</span> án ngữ: khởi đầu trắc trở, danh vị đến chậm, nhưng vãn vận hiển đạt. Hợp nghề chuyên môn, chăm sóc, cố vấn — y dược, giáo dục, tham mưu. Kỵ đầu cơ, canh bạc lớn.</p></div>
+      <div class="card"><p class="tag">Tiền bạc — Tài Bạch</p><h3>Giếng sâu, múc vất vả mà không cạn</h3>
+        <p><span class="star">Thái Dương</span> hãm được <span class="star">Hóa Lộc</span>, bị <span class="star">Tuần</span>: kiếm bằng chữ nghĩa và uy tín, nhưng tiền mặt hay trôi. Bài học lớn nhất là <b>đóng khung tiền thành nhà đất</b> thì của cải mới ở lại.</p></div>
+      <div class="card"><p class="tag">Hôn nhân — Thân cư Phu Thê</p><h3>Hậu vận gửi vào một người</h3>
+        <p><span class="star">Thiên Cơ</span> đắc: người bạn đời định đoạt thăng trầm hơn cả Mệnh. Mười năm này bị <span class="star">Hóa Kỵ</span> chiếu — dễ căng, dễ nghi kỵ. Lắng nghe trước, phán sau, là kỹ năng sinh tồn.</p></div>
+      <div class="card"><p class="tag">Đối ngoại — Thiên Di</p><h3>Ra đường gặp gió</h3>
+        <p><span class="star">Thiên Đồng</span> hãm <span class="star">Hóa Kỵ</span> + <span class="star">Kình Dương</span> + <span class="star">Thiên Hình</span>: chốn đông người và đường xa bất lợi, dễ thị phi. Thu hẹp mặt trận, cẩn thận xe cộ khi đi xa.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="n">iv.</span><h2>Đại vận 35–44 · Thập kỷ phá và xây</h2><span class="k">Mậu Tý · Phá Quân miếu</span></div>
+    <p class="lead">Bản lề của cả đời. <span class="star">Phá Quân</span> miếu cho phép tái cấu trúc — đổi nghề, buông cái cũ, dựng nền mới — nhưng vẫn là Hao tinh, đi cùng <span class="star">Địa Không</span>. Chiến lược: <b>phòng thủ có chọn lọc</b>, được làm mới cuộc đời nhưng không đem ra đánh cược.</p>
+    <div class="grid2">
+      <div class="card"><p class="tag">Vế sáng</p><h3>Hóa Quyền vực dậy vầng trăng</h3><p><span class="hoa quyen star">Hóa Quyền</span> rơi vào <span class="star">Thái Âm</span> ở Mệnh — cứng cáp, chủ động hơn hẳn trong chính mình. <span class="hoa loc star">Hóa Lộc</span> vào cung cha mẹ: lộc từ gia đình và nhà đất.</p></div>
+      <div class="card"><p class="tag">Rủi ro số một</p><h3>Hóa Kỵ vào hôn nhân</h3><p><span class="hoa ky star">Hóa Kỵ</span> rơi vào <span class="star">Thiên Cơ</span> cung Phu Thê — quan hệ vợ chồng là chỗ căng nhất thập kỷ, cần đầu tư nghiêm túc bằng sự nhẫn nại.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="n">v.</span><h2>Lộ trình 12 tháng · Bính Ngọ 2026</h2><span class="k">theo nguyệt vận đã khóa</span></div>
+    <div class="months">
+      <div class="mo"><div class="h"><span class="m">Tháng 1</span><span class="c">Mệnh</span></div><p>Nạp lại năng lượng, đặt mục tiêu. Tránh quyết định lúc tâm trạng xuống.</p></div>
+      <div class="mo hot"><div class="h"><span class="m">Tháng 2</span><span class="c">Phụ Mẫu</span></div><span class="flag">Tiểu hạn</span><p>Trọng tâm gia đình, cha mẹ, lộc bậc trên. Có tin vui, giữ hòa khí.</p></div>
+      <div class="mo"><div class="h"><span class="m">Tháng 3</span><span class="c">Phúc Đức</span></div><p>Dễ nghĩ ngợi, vướng khẩu thiệt. Giữ lời, tránh tranh cãi.</p></div>
+      <div class="mo hot"><div class="h"><span class="m">Tháng 4</span><span class="c">Điền Trạch</span></div><span class="flag">Nóng nhất</span><p>Nhà đất, giấy tờ dồn về. Cẩn trọng mọi hợp đồng.</p></div>
+      <div class="mo"><div class="h"><span class="m">Tháng 5</span><span class="c">Quan Lộc</span></div><p>Công việc lên bàn để sàng lọc, định vị lại. Đừng ép nhanh.</p></div>
+      <div class="mo soft"><div class="h"><span class="m">Tháng 6</span><span class="c">Nô Bộc</span></div><span class="flag">Quý nhân</span><p>Tháng của quý nhân và hợp tác. Dễ có lộc từ đối tác đúng người.</p></div>
+      <div class="mo"><div class="h"><span class="m">Tháng 7</span><span class="c">Thiên Di</span></div><p>Đi xa có lộc nhưng phải cẩn thận xe cộ.</p></div>
+      <div class="mo"><div class="h"><span class="m">Tháng 8</span><span class="c">Tật Ách</span></div><p>Để ý sức khỏe, đường hô hấp. Nghỉ ngơi, khám định kỳ.</p></div>
+      <div class="mo hot"><div class="h"><span class="m">Tháng 9</span><span class="c">Tài Bạch</span></div><p>Tiền kiếm được nhưng dễ trôi. Khóa tiền, hạn chi tiêu bốc đồng.</p></div>
+      <div class="mo"><div class="h"><span class="m">Tháng 10</span><span class="c">Tử Tức</span></div><p>Con cái, gia đình nhỏ. Liên quan thai kỳ thì càng thận trọng.</p></div>
+      <div class="mo hot"><div class="h"><span class="m">Tháng 11</span><span class="c">Phu Thê · Thân</span></div><p>Trục hôn nhân nổi lên. Có Lưu Quyền nhưng nền là Hóa Kỵ — mềm mỏng, lắng nghe.</p></div>
+      <div class="mo soft"><div class="h"><span class="m">Tháng 12</span><span class="c">Huynh Đệ</span></div><p>Về bên anh em, tổng kết, chuẩn bị năm sau.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="n">vi.</span><h2>Điểm mạnh & rủi ro cần quản trị</h2></div>
+    <div class="sr">
+      <div class="card good"><h3>Ba cái vốn lớn</h3>
+        <ul>
+          <li>Chữ <span class="star">Hóa Khoa</span> — phẩm giá và sự đáng tin, thương hiệu cả đời.</li>
+          <li>Trực giác tinh tế của <span class="star">Thái Âm</span> — đọc người, đọc việc rất giỏi.</li>
+          <li>Mạng lưới quý nhân ở <span class="star">Nô Bộc</span> (Lộc Mã) và <span class="star">Huynh Đệ</span> (Tử Phủ).</li>
+          <li>Sức khỏe nền khá — <span class="star">Vũ Khúc</span> miếu được <span class="star">Tuần</span> giải ở Tật Ách.</li>
+        </ul>
+      </div>
+      <div class="card risk"><h3>Năm nhóm rủi ro</h3>
+        <ul>
+          <li>Hôn nhân trong mười năm <span class="star">Hóa Kỵ</span> (Thiên Cơ / Phu Thê).</li>
+          <li>Hao tài nếu quyết định liều — Tài bị <span class="star">Tuần</span>, Phá Quân cùng <span class="star">Địa Không</span>.</li>
+          <li>Đường con cái & thai kỳ ở <span class="star">Tử Tức</span> — cần chăm sóc y tế kỹ.</li>
+          <li>Đối ngoại & giao thông ở <span class="star">Thiên Di</span>.</li>
+          <li>Sức khỏe cha mẹ khi <span class="star">Đà La</span> của vận vào Phụ Mẫu.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="n">vii.</span><h2>Kế hoạch tác chiến 2026</h2></div>
+    <div class="acts">
+      <div class="act"><b>Chốt chuyện nhà đất</b><span>Xử lý giấy tờ, hợp đồng thật cẩn trọng. Tháng 2 và tháng 4 là tâm điểm — có người rà pháp lý.</span></div>
+      <div class="act"><b>Đầu tư cho hôn nhân</b><span>Coi như một dự án quan trọng, thay vì để mười năm Hóa Kỵ âm thầm bào mòn.</span></div>
+      <div class="act"><b>Định vị lại sự nghiệp</b><span>Đi hướng chuyên môn, chăm sóc, cố vấn. Chấp nhận nở muộn mà bền.</span></div>
+      <div class="act"><b>Chăm sóc thân & con</b><span>Khám hô hấp định kỳ, nâng năng lượng nền. Nếu kế hoạch con cái thì dưỡng thai kỹ, giữ tinh thần an ổn.</span></div>
+    </div>
+  </section>
+
+  <!--READING-->
+
+  <section class="brandsec">
+    <div class="sec-head"><span class="n">ix.</span><h2>Về Nine Feng Shui</h2><span class="k">Tầm nhìn · Sứ mệnh · Giá trị cốt lõi</span></div>
+    <p class="slogan">"Nine trao tri thức. Còn con đường đi, là của mỗi người."</p>
+    <div class="vm">
+      <div class="card"><p class="tag">Tầm nhìn</p><p>Trở thành một học viện huyền học ứng dụng có ảnh hưởng lâu dài, nơi mọi người — không phân biệt xuất phát điểm hay vị trí xã hội — đều có thể tiếp cận và vận dụng tri thức về thời vận, để hiểu rõ nhịp sống của chính mình và chọn đúng trong từng giai đoạn của cuộc đời. Với Nine, huyền học không dành riêng cho giới tinh hoa, mà là tri thức về quy luật vận hành của đời sống.</p></div>
+      <div class="card"><p class="tag">Sứ mệnh</p><p>Đơn giản hoá huyền học và chuyển hoá tri thức cổ xưa thành hệ thống rõ ràng, hiện đại và ứng dụng được — giúp con người hiểu quy luật thời vận, gỡ rối những khuất tất trong đời sống và ra quyết định sáng suốt hơn. Nine không dự đoán tương lai mơ hồ, không gieo nỗi sợ, không tạo sự lệ thuộc; Nine giúp mỗi người tự dựng bản đồ thời vận của riêng mình.</p></div>
+    </div>
+    <div class="values">
+      <div class="val"><b>01</b><span>Huyền học là tri thức dành cho tất cả mọi người.</span></div>
+      <div class="val"><b>02</b><span>Đơn giản hoá để tri thức thực sự tiếp cận và ứng dụng được.</span></div>
+      <div class="val"><b>03</b><span>Ứng dụng thực tế là thước đo cuối cùng của giá trị.</span></div>
+      <div class="val"><b>04</b><span>Mỗi con người có một bản đồ thời vận riêng.</span></div>
+      <div class="val"><b>05</b><span>Trao quyền nhận thức, không tạo sự lệ thuộc.</span></div>
+      <div class="val"><b>06</b><span>Tôn trọng quy luật, thuận theo thay vì cưỡng vận.</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="fl">
+      <span class="seal"><img src="{{LOGO}}" alt="Nine Feng Shui"/></span>
+      <b>Nine Feng Shui</b>
+    </div>
+    <p class="disc">Bản đồ, không phải định mệnh. Lá số phản ánh cấu trúc và xu hướng, không tước quyền lựa chọn của con người.</p>
+    <p class="meta">NINE FENG SHUI · Lá số Kim Yến</p>
+  </footer>
+
+</div>
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('tg');
+  function cur(){var t=root.getAttribute('data-theme');if(t)return t;
+    return window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}
+  btn.addEventListener('click',function(){
+    root.setAttribute('data-theme', cur()==='dark'?'light':'dark');
+  });
+})();
+</script>
+</body>
+</html>

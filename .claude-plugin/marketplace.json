@@ -1,0 +1,16 @@
+{
+  "name": "nine-skills",
+  "owner": {
+    "name": "Nine Feng Shui"
+  },
+  "metadata": {
+    "description": "Marketplace nội bộ Nine Feng Shui — các skill dùng chung cho cả team."
+  },
+  "plugins": [
+    {
+      "name": "dashboard-la-so",
+      "source": "./plugins/dashboard-la-so",
+      "description": "Dựng dashboard trực quan một trang cho một lá số Tử Vi (Nine Feng Shui) để gửi khách."
+    }
+  ]
+}
